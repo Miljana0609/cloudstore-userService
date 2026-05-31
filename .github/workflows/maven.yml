@@ -26,6 +26,14 @@ jobs:
       DB_USERNAME: ${{ secrets.DB_USERNAME }}
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
 
+      name: Debug env
+      run: |
+        echo "JWT_SECRET=$JWT_SECRET"
+        echo "JWT_EXPIRATION_MS=$JWT_EXPIRATION_MS"
+        echo "DB_URL=$DB_URL"
+        echo "DB_USERNAME=$DB_USERNAME"
+        echo "DB_PASSWORD=$DB_PASSWORD"
+
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 17
