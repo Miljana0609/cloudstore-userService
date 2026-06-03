@@ -1,5 +1,6 @@
 package se.jensen.miljana.cloudstoreuserservice.product;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
@@ -10,12 +11,12 @@ import java.util.List;
 public class ProductClient {
 
     private final RestClient restClient;
-    private final String fakestoreServiceUrl = "http://fakestoreservice-env.eba-pmbni5kh.eu-north-1.elasticbeanstalk.com/products";
+
+    @Value("${fakestore.url}")
+    private String fakestoreServiceUrl;
 
     public ProductClient(RestClient.Builder builder) {
-        this.restClient = builder
-                .baseUrl(fakestoreServiceUrl)
-                .build();
+        this.restClient = builder.build();
     }
 
 
