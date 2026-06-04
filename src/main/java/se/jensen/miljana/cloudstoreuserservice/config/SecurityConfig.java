@@ -88,7 +88,8 @@ public class SecurityConfig {
             config.setAllowedOrigins(List.of(
                     "http://localhost:5000",
                     "http://localhost:8081",
-                    "http://localhost:3000"
+                    "http://localhost:3000",
+                    "https://courageous-kashata-3f228e.netlify.app"
             ));
 
             config.setAllowedMethods(List.of(
